@@ -106,7 +106,15 @@ class TestAllMethods(unittest.TestCase):
 
 	# Check to see whether the warehouse correctly return the item with the highest price
 	def test_warehouse_max_price(self):
-		pass
+		Walmart = Warehouse([self.item1, self.item2, self.item4])
+		mx_price = Walmart.get_max_price()
+		self.assertEqual(mx_price, self.item1)
+
+		Walmart.add_item(self.item3)
+		newmx = Walmart.get_max_price()
+		self.assertEqual(newmx, self.item1)
+
+		
 		
 
 def main():
